@@ -718,7 +718,6 @@ void exemploDeteccaoCicloDirigido()
     dagSemCiclo.adicionarAresta(0, 2);
     dagSemCiclo.adicionarAresta(1, 3);
     dagSemCiclo.adicionarAresta(2, 4);
-    dagSemCiclo.adicionarAresta(3, 5);
     dagSemCiclo.adicionarAresta(4, 5);
     cout << "1. Grafo direcionado sem ciclo:\n";
     dagSemCiclo.exibirGrafo();
@@ -1022,6 +1021,11 @@ void menuDemonstracao()
         case 7:
             menuArvoreInterativo();
             break;
+        case 0:
+            cout << "Obrigado por usar o programa!\n";
+            break;
+        default:
+            cout << "Opcao invalida! Tente novamente.\n";
         }
     } while (opcao != 0);
 }
