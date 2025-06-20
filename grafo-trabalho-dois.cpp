@@ -233,7 +233,16 @@ private:
                     cicloEncontrado.push_back(*j);
                 }
                 cicloEncontrado.push_back(*i); // Fechar o ciclo
-                return true;
+
+                // VERIFICAÇÃO: Ciclo deve ter pelo menos 3 vértices distintos
+                if (cicloEncontrado.size() >= 4) // 4 porque inclui vértice repetido
+                {
+                    return true;
+                }
+                else
+                {
+                    cicloEncontrado.clear(); // Não é um ciclo válido
+                }
             }
         }
 
@@ -282,7 +291,16 @@ private:
                         cicloEncontrado.push_back(*j);
                     }
                     cicloEncontrado.push_back(*i); // Fechar o ciclo
-                    return true;
+                    
+                    // VERIFICAÇÃO: Ciclo deve ter pelo menos 3 vértices distintos
+                    if (cicloEncontrado.size() >= 4) // 4 porque inclui vértice repetido
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        cicloEncontrado.clear();
+                    }
                 }
             }
         }
@@ -771,9 +789,11 @@ void exemploPontosArticulacao()
     }
     else
     {
-        for (int p : pontos)
+        for (size_t i = 0; i < pontos.size(); i++)
         {
-            cout << p << " ";
+            cout << "[" << pontos[i] << "]";
+            if (i < pontos.size() - 1)
+                cout << " - ";
         }
         cout << endl;
     }
